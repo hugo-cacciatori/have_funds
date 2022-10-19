@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "953080877064",
+    "project_id": "have-fund-c4d23",
+    "storage_bucket": "have-fund-c4d23.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953080877064:android:0b3fffdfd433ed7b3e41bd",
+        "android_client_info": {
+          "package_name": "com.example.have_fund"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "953080877064-p0qnpd16suv029mh7f6fr4110pktdfh1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByLkIXFHiU3GecR5S7yvROnZCfFTvE57s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "953080877064-p0qnpd16suv029mh7f6fr4110pktdfh1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
