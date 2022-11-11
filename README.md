@@ -1,16 +1,12 @@
-# have_fund
+# Have Funds !
 
-A new Flutter project.
+Projet de BTS SIO seconde année. 
+Par Hugo Cacciatori, Thomas Belaidi et Joseph Laugier.
 
-## Getting Started
+# Description
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Web app de gestion de remboursements.
+Les utilisateurs sont identifiés par e-mail, la création du compte se fait en interne par le si de l'entreprise.
+Il existe deux types de comptes : les employés et les comptables.
+Les employés déclarent leurs frais professionnels pour lesquels ils demandent un remboursement auprès de leur entreprise.
+Les comptables vérifient chaque demande et accordent ou non le remboursement.
