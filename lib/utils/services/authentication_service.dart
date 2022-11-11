@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:have_fund/services/auth_response.dart';
+import 'package:have_fund/utils/services/auth_response.dart';
 
 class AuthenticationService {
   static const String emptyMsg = "";

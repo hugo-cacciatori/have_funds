@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Util {
+class Utils {
   static void showMessage(BuildContext context, String message, Color color) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text(message),

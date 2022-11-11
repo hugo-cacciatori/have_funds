@@ -1,0 +1,28 @@
+DB
+
+	Company
+		Nom_entreprise : string
+		UID_admin : string
+	Account
+		nom_employé : string
+		prenom_employé : string
+		UID_entreprise : int
+		comptable : bool
+		admin : bool
+		
+
+compte admin :
+	accès au formulaire de création de compte
+	crée des comptes en transférant le UID de son entreprise vers le champ UID_entreprise du compte créé
+	peut déterminer si le compte créé est comptable ou employé
+	
+	
+	
+	
+	
+Etapes :
+	1 : relier un user à une table de la db
+	2 : Afficher son nom dans le profil
+	3 : reproduire le schéma complet
+	4 : rajouter le formulaire de création de compte, disponible uniquement pour les admins
+	5 : créer un compte comptable avec ce système

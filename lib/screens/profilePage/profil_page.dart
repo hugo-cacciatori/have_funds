@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../utils/services/authentication_service.dart';
+
 class ProfilPage extends StatelessWidget {
   const ProfilPage({Key? key}) : super(key: key);
   @override
@@ -62,13 +64,9 @@ Widget imagePicture = Container(
 
 Widget profilSection = Column(
   children: [
-    const Text(
-      'Rodolphe l\'informaticien.',
-      style: TextStyle(
-        color: Colors.white,
-        fontSize: 22,
-        fontWeight: FontWeight.bold,
-      ),
+    Text(
+      AuthenticationService().getUserName() ?? "",
+      style: const TextStyle(fontSize: 30),
     ),
     const SizedBox(height: 5),
     const Text(

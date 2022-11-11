@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:have_fund/components/rounded_button.dart';
-import 'package:have_fund/screens/profile/profil_page.dart';
-import 'package:have_fund/services/auth_response.dart';
-import 'package:have_fund/services/authentication_service.dart';
-import 'package:have_fund/utils/util.dart';
+import 'package:have_fund/screens/profilePage/profil_page.dart';
+import 'package:have_fund/utils/services/auth_response.dart';
+import 'package:have_fund/utils/services/authentication_service.dart';
+
+import '../../../utils/utils.dart';
 
 class LoginForm extends StatelessWidget {
   LoginForm({Key? key}) : super(key: key);
@@ -99,7 +100,7 @@ class LoginForm extends StatelessWidget {
                                 (route) => false);
                           } else {
                             //Show error message in snackbar
-                            Util.showErrorMessage(
+                            Utils.showErrorMessage(
                                 context, authResponse.message);
                           }
                         });

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:have_fund/screens/signin/login_form.dart';
 
-class FichierMagique extends StatelessWidget {
-  const FichierMagique({super.key});
+import 'sections/login_form.dart';
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
 
-   @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
