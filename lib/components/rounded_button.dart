@@ -18,7 +18,7 @@ class RoundedButton extends StatelessWidget {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
       child: Ink(
         decoration: BoxDecoration(
-            color: Colors.green, borderRadius: BorderRadius.circular(20)),
+            color: const Color(0xff4169E1), borderRadius: BorderRadius.circular(20)),
         child: Container(
           height: 40,
           alignment: Alignment.center,

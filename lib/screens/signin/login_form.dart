@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:have_fund/components/rounded_button.dart';
-import 'package:have_fund/components/social_media_options.dart';
-import 'package:have_fund/screens/forgotpassword/forgot_password_screen.dart';
-import 'package:have_fund/screens/home/home_screen.dart';
-import 'package:have_fund/screens/signup/signup_screen.dart';
+import 'package:have_fund/screens/profile/profil_page.dart';
 import 'package:have_fund/services/auth_response.dart';
 import 'package:have_fund/services/authentication_service.dart';
 import 'package:have_fund/utils/util.dart';
@@ -22,7 +19,7 @@ class LoginForm extends StatelessWidget {
       child: Column(
         children: [
           const Text(
-            "Sign In",
+            "Log In",
             style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
           ),
           const SizedBox(
@@ -84,27 +81,6 @@ class LoginForm extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        //Open Forgot password screen here
-                        //
-                        Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const ForgotPasswordScreen()),
-                            (route) => false);
-                      },
-                      child: const Text("Forgot Password?"),
-                    )
-                  ],
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
                 RoundedButton(
                     label: "LOGIN",
                     onPressed: () {
@@ -119,7 +95,7 @@ class LoginForm extends StatelessWidget {
                             Navigator.pushAndRemoveUntil(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const HomeScreen()),
+                                    builder: (context) => const ProfilPage()),
                                 (route) => false);
                           } else {
                             //Show error message in snackbar
@@ -133,28 +109,9 @@ class LoginForm extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          const SocialMediaOptions(),
           const SizedBox(
             height: 30,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text("Don't have an account? "),
-              InkWell(
-                onTap: () {
-                  Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SignUpScreen()),
-                      (route) => false);
-                },
-                child: const Text("Sign Up",
-                    style: TextStyle(
-                        color: Colors.blue, fontWeight: FontWeight.bold)),
-              )
-            ],
-          )
         ],
       ),
     );
