@@ -5,7 +5,7 @@ import 'screens/HomePage/home_page.dart';
 import 'utils/firebase_options.dart';
 
 void main() async {
-  await WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
 );
@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      title: 'HaveFunds!',
       debugShowCheckedModeBanner: false,
       home: HomePage(),
     );

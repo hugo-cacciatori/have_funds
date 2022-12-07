@@ -1,10 +1,15 @@
+
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:have_fund/components/rounded_button.dart';
-import 'package:have_fund/screens/profilePage/profil_page.dart';
-import 'package:have_fund/utils/services/auth_response.dart';
-import 'package:have_fund/utils/services/authentication_service.dart';
-
+import 'package:have_fund/screens/LandingPage/landing_page.dart';
+import 'package:have_fund/utils/services/firebase_response.dart';
+import 'package:have_fund/utils/services/auth_service.dart';
+import 'package:have_fund/utils/services/database_manager.dart';
 import '../../../utils/utils.dart';
+import '../../Administrators/AdminDashboard/admin_dashboard.dart';
 
 class LoginForm extends StatelessWidget {
   LoginForm({Key? key}) : super(key: key);
@@ -15,6 +20,8 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    emailEditingController.text = 'hcwhatever@gmail.com';
+    pwdEditingController.text = '123456';
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Column(
@@ -71,7 +78,6 @@ class LoginForm extends StatelessWidget {
                       isDense: true,
                       contentPadding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                       fillColor: Colors.grey[300]),
-                  //Lets apply validation
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "Password is required";
@@ -84,28 +90,26 @@ class LoginForm extends StatelessWidget {
                 ),
                 RoundedButton(
                     label: "LOGIN",
-                    onPressed: () {
+                    onPressed: () async {
                       if (_formKey.currentState!.validate()) {
-                        //Call sign in method of firebase & open home screen based on successfull login
-                        AuthenticationService()
-                            .signInWithEmail(
-                                email: emailEditingController.text,
-                                password: pwdEditingController.text)
-                            .then((authResponse) {
-                          if (authResponse.authStatus == AuthStatus.success) {
-                            Navigator.pushAndRemoveUntil(
+                        await AuthService().logIn(email: emailEditingController.text, password: pwdEditingController.text).then((firebaseResponse) async {
+                          if (firebaseResponse.queryStatus == QueryStatus.success) {
+                                Navigator.pushAndRemoveUntil(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const ProfilPage()),
+                                    builder: (context) => LandingPage()),
                                 (route) => false);
                           } else {
                             //Show error message in snackbar
                             Utils.showErrorMessage(
-                                context, authResponse.message);
+                                context, firebaseResponse.message);
                           }
                         });
+
+
                       }
-                    })
+                    }
+                )
               ])),
           const SizedBox(
             height: 10,

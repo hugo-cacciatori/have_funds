@@ -1,30 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:have_fund/utils/app_graphics.dart';
 
 import 'sections/login_form.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
-                image: AssetImage("images/bg.png"),
+                image: AppGraphics.getGraphMap['background'],
                 fit: BoxFit.cover)),
         child: Center(
           child: SingleChildScrollView(
-            child: Container(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Container(
               padding: const EdgeInsets.all(10),
               child: Card(
-                color: Color(0xffF5FFFA),
+                color: const Color(0xffF5FFFA),
                 elevation: 12,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25),
                 ),
-                //Using LayoutBuilder for responsive UI
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
                     child: Column(
@@ -38,7 +39,10 @@ class HomePage extends StatelessWidget {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.center,
-                                children: const [Image(image: AssetImage("assets/images/have_fund_logo.png"), width: 150)],
+                                children: const [
+                                  CircleAvatar(backgroundImage: AssetImage("assets/images/havefunds.png"),
+                                radius: 100,)
+                                  ],
                               ),
                             ),
                             SizedBox(
@@ -49,7 +53,8 @@ class HomePage extends StatelessWidget {
                       ],
                     ),),
               ),
-            ),
+            ),),
+            
           ),
         ),
       ),
