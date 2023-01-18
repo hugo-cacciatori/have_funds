@@ -4,6 +4,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'screens/HomePage/home_page.dart';
 import 'utils/firebase_options.dart';
 
+// Hello World !
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
