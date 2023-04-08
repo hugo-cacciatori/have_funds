@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:have_fund/components/custom_scaffold.dart';
 import 'package:have_fund/components/loading.dart';
-import 'package:have_fund/screens/Employees/RefundDetails/refund_detail.dart';
+import 'package:have_fund/screens/Common/RefundDetails/refund_detail.dart';
 import 'package:have_fund/screens/Employees/RefundForm/refund_form.dart';
 import '../../../models/refund.dart';
 import '../../../models/user_model.dart';
@@ -240,6 +240,7 @@ class _ProfilePageState extends State<ProfilePage> {
   Future tableDataFetch() async {
     await DatabaseManager().firestore.collection('users').doc(AuthService().getCurrentUser!.uid).collection('refunds').get().then((doc) {
         for (var i = 0; i < doc.docs.length; i++) {
+          print(doc.docs[i].reference.id);
           if(doc.docs[i]['isValidated'] == true){
             widget.validatedRefunds.add(Refund(
               doc.docs[i].reference.id,

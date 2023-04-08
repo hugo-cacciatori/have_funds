@@ -3,12 +3,12 @@ import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
 import 'package:have_fund/components/loading.dart';
 import 'package:have_fund/screens/Accountants/AccontantDashboard/accountant_dashboard.dart';
-import '../../models/refund.dart';
-import '../../models/user_model.dart';
-import '../../utils/services/auth_service.dart';
-import '../../utils/services/database_manager.dart';
-import '../Employees/ProfilePage/profile_page.dart';
-import '../administrators/AdminDashboard/admin_dashboard.dart';
+import '../../../models/refund.dart';
+import '../../../models/user_model.dart';
+import '../../../utils/services/auth_service.dart';
+import '../../../utils/services/database_manager.dart';
+import '../../Employees/ProfilePage/profile_page.dart';
+import '../../administrators/AdminDashboard/admin_dashboard.dart';
 
 
 class LandingPage extends StatelessWidget{
@@ -16,9 +16,9 @@ class LandingPage extends StatelessWidget{
   UserModel? userInfo;
   bool isAdmin = false;
   bool isAccountant = false;
-  List<Refund> pendingRefunds = [];
-  List<Refund> validatedRefunds = [];
-  List<Refund> rejectedRefunds = [];
+  // List<Refund> pendingRefunds = [];
+  // List<Refund> validatedRefunds = [];
+  // List<Refund> rejectedRefunds = [];
 
   Future updateUserInfo() async {
     await DatabaseManager().firestore.collection('users').doc(AuthService().getCurrentUser!.uid).get().then((userDoc) async {

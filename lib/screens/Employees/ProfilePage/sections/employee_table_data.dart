@@ -2,7 +2,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:have_fund/screens/Employees/RefundDetails/refund_detail.dart';
+import 'package:have_fund/screens/Common/RefundDetails/refund_detail.dart';
 
 import '../../../../models/refund.dart';
 
@@ -36,12 +36,12 @@ class EmployeeTableData extends DataTableSource{
     } else {
       return DataRow(
         cells: [
-          DataCell(Text(data[index].getDate!)),
-          DataCell(Text(data[index].getType!)),
-          DataCell(Text(data[index].getAmount!.toString() + '€')),
-          DataCell(Text(data[index].getSeller!)),
-          DataCell(Text(data[index].getAddress!)),
-          DataCell(Text(data[index].getMotive!)),
+          DataCell(SelectableText(data[index].getDate!)),
+          DataCell(SelectableText(data[index].getType!)),
+          DataCell(SelectableText(data[index].getAmount!.toString() + '€')),
+          DataCell(SelectableText(data[index].getSeller!)),
+          DataCell(SelectableText(data[index].getAddress!)),
+          DataCell(SelectableText(data[index].getMotive!)),
           DataCell(Icon(
             Icons.search
           ), onTap: () {

@@ -38,6 +38,8 @@ class Refund {
   String? get getRejectionMotive => rejectionMotive;
   String? get getStatus => status;
 
+  
+
   Map<String, dynamic> toJson() => {'id' : id, 'date': date, 'type': type, 'amount': amount, 'seller': seller, 'address': address, 'motive': motive, 'rejectionMotive': rejectionMotive};
 
   static Future addRefund(String userID, String date, String type, double amount, String seller, String address, String motive) {
@@ -47,7 +49,7 @@ class Refund {
         .collection('refunds')
         .doc()
 				.set({
-            'sellerID': userID,
+            'submitterID': userID,
 						'date': date,
             'type': type,
             'amount': amount,
@@ -72,6 +74,24 @@ class Refund {
 				.set({
             'isValidated': true,
             'isRejected': false,
+				},
+        SetOptions(merge : true))
+				.then((value) => print("Refund request validated"))
+				.catchError(
+				(error) => print("Erreur: $error"),
+		);
+  }
+
+  static Future reject (String id, String uid, String message){
+    return DatabaseManager().firestore
+				.collection('users')
+				.doc(uid)
+        .collection('refunds')
+        .doc(id)
+				.set({
+            'isValidated': false,
+            'isRejected': true,
+            'rejectionMotive': message
 				},
         SetOptions(merge : true))
 				.then((value) => print("Refund request validated"))

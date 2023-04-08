@@ -1,15 +1,11 @@
 
 
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:have_fund/components/rounded_button.dart';
-import 'package:have_fund/screens/LandingPage/landing_page.dart';
+import 'package:have_fund/screens/Common/LandingPage/landing_page.dart';
 import 'package:have_fund/utils/services/firebase_response.dart';
 import 'package:have_fund/utils/services/auth_service.dart';
-import 'package:have_fund/utils/services/database_manager.dart';
-import '../../../utils/utils.dart';
-import '../../Administrators/AdminDashboard/admin_dashboard.dart';
+import '../../../../utils/utils.dart';
 
 class LoginForm extends StatelessWidget {
   LoginForm({Key? key}) : super(key: key);
@@ -20,7 +16,7 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    emailEditingController.text = 'hcwhatever@gmail.com';
+    emailEditingController.text = 'ilestcomptable@oui.com';
     pwdEditingController.text = '123456';
     return Padding(
       padding: const EdgeInsets.all(20.0),
@@ -100,7 +96,6 @@ class LoginForm extends StatelessWidget {
                                     builder: (context) => LandingPage()),
                                 (route) => false);
                           } else {
-                            //Show error message in snackbar
                             Utils.showErrorMessage(
                                 context, firebaseResponse.message);
                           }

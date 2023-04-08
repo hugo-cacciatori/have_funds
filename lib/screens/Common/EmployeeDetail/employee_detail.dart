@@ -29,7 +29,7 @@ class EmployeeDetails extends StatelessWidget{
           children: [
             Column(
               children: [
-                SelectableText('First Name : ${user!.getFirstName}', style: TextStyle(color: Color(AppGraphics.getGraphMap['black'])),),
+                SelectableText('First Name : ${user!.getFirstName}', style: TextStyle(color: Color(AppGraphics.getGraphMap['black'])), ),
                 SelectableText('Last Name : ${user!.getLastName}', style: TextStyle(color: Color(AppGraphics.getGraphMap['black']))),
                 SelectableText('Email : ${user!.getEmail}', style: TextStyle(color: Color(AppGraphics.getGraphMap['black']))),
                 SelectableText('Position : ${user!.getPosition}', style: TextStyle(color: Color(AppGraphics.getGraphMap['black']))),

@@ -61,6 +61,18 @@ class DatabaseManager {
         return FirebaseResponse(QueryStatus.error, 'An error occurred !');
       }
   }
+
+  static Future<FirebaseResponse> rejectRefundRequest (
+    {String? uid, 
+    String? refundID,
+    String? message}) async {
+      try {
+        Refund.reject(refundID!, uid!, message!);
+        return FirebaseResponse(QueryStatus.success, '');
+      } on FirebaseException catch (e) {
+        return FirebaseResponse(QueryStatus.error, 'An error occurred !');
+      }
+  }
     
   
 

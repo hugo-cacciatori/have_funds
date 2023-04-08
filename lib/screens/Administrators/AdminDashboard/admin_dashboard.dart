@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:have_fund/components/custom_scaffold.dart';
 import 'package:have_fund/components/loading.dart';
 import 'package:have_fund/screens/Administrators/AdminDashboard/sections/admin_table_data.dart';
-import 'package:have_fund/screens/Administrators/EmployeeDetail/employee_detail.dart';
 import 'package:have_fund/screens/Administrators/RegisterForm/register_form.dart';
 import '../../../models/user_model.dart';
 import '../../../utils/app_graphics.dart';
 import '../../../utils/services/database_manager.dart';
+import '../../Common/EmployeeDetail/employee_detail.dart';
 
 class AdminDashboard extends StatefulWidget{
   

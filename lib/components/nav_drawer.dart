@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:have_fund/screens/HomePage/home_page.dart';
-import 'package:have_fund/screens/LandingPage/landing_page.dart';
+import 'package:have_fund/screens/Common/HomePage/home_page.dart';
+import 'package:have_fund/screens/Common/LandingPage/landing_page.dart';
 
 import '../utils/app_graphics.dart';
 
