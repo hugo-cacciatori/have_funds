@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'screens/Common/HomePage/home_page.dart';
-import 'utils/firebase_options.dart';
+import 'package:have_fund/widgets/custom_scroll_behavior.dart';
+import 'pages/login_page.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-);
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarIconBrightness: Brightness.dark,
-      statusBarColor: Colors.transparent));
+  );
   runApp(const MyApp());
 }
 
@@ -20,10 +17,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'HaveFunds!',
+      scrollBehavior: CustomScrollBehavior(),
+      theme: ThemeData(
+        useMaterial3: true,
+        brightness: Brightness.light,
+      ),
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: LoginPage(),
     );
   }
 }
